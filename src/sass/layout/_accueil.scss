@@ -1,0 +1,124 @@
+@use '../base';
+@use '../abstracts';
+
+#accueil {
+    margin-top: 24.6rem;
+    .container-narrow {
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .main-container__center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-width: 850px) {
+            align-items: center;
+        }
+    }
+
+    .main-title {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-width: 850px) {
+            align-items: center;
+            justify-content: center;
+
+            .main-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        h1 {
+            font-family: abstracts.$roboto-slab;
+            font-weight: abstracts.$bold;
+            font-size: 5.6rem;
+            @media screen and (max-width: 850px) {
+                right: unset;
+                position: initial;
+            }
+        }
+
+        h2 {
+            font-family: abstracts.$roboto-slab;
+            font-weight: abstracts.$regular;
+            font-size: 4rem;
+            margin-top: 2rem;
+            @media screen and (max-width: 850px) {
+                align-self: center;
+                text-align: center;
+            }
+        }
+    }
+
+    .scroll {
+        margin-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        strong {
+            font-family: abstracts.$roboto-slab;
+            font-weight: abstracts.$regular;
+            font-size: 2.7rem;
+            text-align: center;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.9rem;
+        }
+
+        img {
+            width: 60%
+        }
+    }
+}
+
+.dark-theme {
+
+    #accueil {
+        .main-logo {
+            img:last-of-type {
+                display: none;
+            }
+        }
+
+        .scroll {
+            img:last-of-type {
+                display: none;
+            }
+        }
+    }
+}
+
+.light-theme {
+    #accueil {
+        .main-logo {
+            img:first-of-type {
+                display: none;
+            }
+        }
+
+        .scroll {
+            img:first-of-type {
+                display: none;
+            }
+        }
+    }
+}

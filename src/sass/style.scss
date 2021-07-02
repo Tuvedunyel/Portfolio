@@ -1,0 +1,20 @@
+@use 'base';
+@use 'abstracts';
+@use 'component';
+@use 'layout';
+
+.dark-theme {
+    background-color: abstracts.$dark-color;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+    color: white;
+}
+
+.light-theme {
+    background-color: abstracts.$light-color;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+    color: abstracts.$dark-color;
+}

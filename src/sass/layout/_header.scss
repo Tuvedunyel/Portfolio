@@ -1,0 +1,93 @@
+@use '../base';
+@use '../abstracts';
+
+header {
+
+    .container {
+        max-width: 90%;
+        margin: auto;
+        padding-top: 3.2rem;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 700px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 700px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    #main-nav {
+        display: flex;
+        list-style-type: none;
+
+        @media screen and (max-width: 700px) {
+            padding: 0;
+        }
+        
+        li:not(:last-of-type) {
+            margin-right: 6.7rem;
+
+            @media screen and (max-width: 480px) {
+                margin-right: 3.7rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-family: abstracts.$raleway;
+            font-size: 2.7rem;
+            font-weight: abstracts.$semi-bold;
+            transition: 1s;
+
+            @media screen and (max-width: 480px) {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.dark-theme {
+    header {
+        .logo-container {
+            img:last-of-type {
+                display: none;
+            }
+        }
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.light-theme {
+    header {
+        .logo-container {
+            img:first-of-type {
+                display: none;
+            }
+        }
+
+        a {
+            color: abstracts.$dark-color;
+        }
+    }
+}
